@@ -1,19 +1,19 @@
 # appium-stf-OSX-script
 Shell script for installing Appium and its dependencies for iOS Automation on macOS. It also includes installing additional dependencies for STF usage. The setup is to be used on a new and clean machine but I will try adding some checks to skip installation and setup of already available dependencies. The setup requires minimum intervention - typing the password for some sudo commands.
 Requirements before running the script:
-*Install Xcode*
-*Open terminal and run "xcode-select --install" and install the command line tools*
-*Open terminal and navigate to the folder with the script and run "chmod 700 dependencies.sh"*
-*In the script change the values for LOCALUSER(the name of the user on the machine), APPIUM_VERSION(the version of appium you want to install) and APPIUMNODEVERSION(the Node.js version to use for Appium, I am using 10.16.2 as I know it is being stable for me)*
-*To run the script "./dependencies.sh" in Terminal*
+**Install Xcode
+**Open terminal and run "xcode-select --install" and install the command line tools
+**Open terminal and navigate to the folder with the script and run "chmod 700 dependencies.sh"
+**In the script change the values for LOCALUSER(the name of the user on the machine), APPIUM_VERSION(the version of appium you want to install) and APPIUMNODEVERSION(the Node.js version to use for Appium, I am using 10.16.2 as I know it is being stable for me)*
+**To run the script "./dependencies.sh" in Terminal
 
 Script description:
 1. Creates a folder for each dependency installation logs in the same folder the script is located.
 2. installNVM
-   *Checks if NVM is installed and if not - installs it
-   *Checks if Node.js 8.16.0 is installed and if not - installs it with nvm(8.16.0 is needed for STF)
-   *Checks if Node.js 10.16.2 is installed and if not - installs it with nvm(10.16.2 is used for Appium)
-   *Sets nvm alias default for Node.js 8.16.0
+   **Checks if NVM is installed and if not - installs it
+   **Checks if Node.js 8.16.0 is installed and if not - installs it with nvm(8.16.0 is needed for STF)
+   **Checks if Node.js 10.16.2 is installed and if not - installs it with nvm(10.16.2 is used for Appium)
+   **Sets nvm alias default for Node.js 8.16.0
 3. installHomebrew - checks if Homebrew is installed and if not -installs it
 4. installJavaOpenJDK - checks if there is Java installed and if not installs openjdk8 and sets environment variables
 5. installAppium - checks if Appium 1.16.0 is installed for Node.js 10.16.2 and if not - installs it
