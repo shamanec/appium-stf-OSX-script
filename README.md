@@ -4,7 +4,7 @@ Requirements before running the script:
 -Install Xcode
 -Open terminal and run "xcode-select --install" and install the command line tools
 -Open terminal and navigate to the folder with the script and run "chmod 700 dependencies.sh"
--In the script change the values for LOCALUSER(the name of the user on the machine), APPIUM_VERSION(the version of appium you want to install) and APPIUMNODEVERSION(the Node.js version to use for Appium, I am using 10.16.2 as I know it is being stable for me)*
+-In the script change the values for LOCALUSER(the name of the user on the machine), APPIUM_VERSION(the version of appium you want to install) and APPIUMNODEVERSION(the Node.js version to use for Appium, I am using 10.16.2 as I know it is being stable for me)
 -To run the script "./dependencies.sh" in Terminal
 
 Script description:
