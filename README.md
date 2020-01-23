@@ -1,5 +1,5 @@
 # appium-stf-OSX-script
-Shell script for installing Appium and its dependencies for iOS Automation on macOS. It also includes installing additional dependencies for STF usage. The setup is to be used on a new and clean machine but I will try adding some checks to skip installation and setup of already available dependencies. The setup requires minimum intervention - typing the password for some sudo commands.
+Shell script for installing Appium and its dependencies for iOS Automation on macOS. It also includes installing additional dependencies for STF usage. The setup is to be used on a new and clean machine but I will try adding some checks to skip installation and setup of already available dependencies. The setup requires minimum intervention - typing the password for some sudo commands. I am new to shell scripting and been using some internet resources so any improvement suggestions are welcome.
 Requirements before running the script:  
    - Install Xcode  
    - Open terminal and run "xcode-select --install" and install the command line tools  
