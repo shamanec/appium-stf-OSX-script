@@ -10,20 +10,10 @@ mkdir ${BASEDIR}/dependency-logs
 installNVM(){
 	echo "Installing NVM and required node versions"
 	{
-		#Check if NVM is installed and if not - install it for easier Node.js version management
-		set +e
-		$(nvm --version &> /dev/null)
-		EXIT_CODE=$?
-		set -e
-		if [ $EXIT_CODE == 0 ]; then
-			echo "NVM is already installed."
-		else
-			#Install nvm
-			echo "Installing NVM"
-			touch ~/.bash_profile
-			curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
-			wait
-		fi
+		echo "Installing NVM"
+		touch ~/.bash_profile
+		curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+		wait
 
 		#Reload nvm to use it
 		echo "Reloading nvm to keep using it in the same terminal"
@@ -35,33 +25,15 @@ installNVM(){
 		nvm --version
 		wait
 
-		#Check if the required Node.js version for STF is installed and if not - install it
-		set +e
-		$(nvm ls | grep v8.16.0 &> /dev/null)
-		EXIT_CODE=$?
-		set -e
-		if [ $EXIT_CODE == 0 ]; then
-			echo "Node.js v8.16.0 is already installed."
-		else
-			#Install Node.js 8.16.0 with nvm
-			echo "Installing Node.js 8.16.0 with nvm"
-			nvm install 8.16.0
-			wait
-		fi
+		#Install Node.js 8.16.0 with nvm
+		echo "Installing Node.js 8.16.0 with nvm"
+		nvm install 8.16.0
+		wait
 
-		#Check if the required Node.js version for Appium is installed and if not - install it
-		set +e
-		$(nvm ls | grep v$APPIUMNODEVERSION &> /dev/null)
-		EXIT_CODE=$?
-		set -e
-		if [ $EXIT_CODE == 0 ]; then
-			echo "Node.js v$APPIUMNODEVERSION is already installed."
-		else
-			#Install Node.js $APPIUMNODEVERSION with nvm
-			echo "Installing Node.js $APPIUMNODEVERSION with nvm"
-			nvm install $APPIUMNODEVERSION
-			wait
-		fi
+		#Install Node.js 10.16.2 with nvm
+		echo "Installing Node.js $APPIUMNODEVERSION with nvm"
+		nvm install $APPIUMNODEVERSION
+		wait
 
 		#Make Node.js 8.16.0 the default version on nvm
 		echo "Setting Node.js 8.16.0 as default alias for nvm"
@@ -169,16 +141,15 @@ installCarthage(){
 			echo "Installing Carthage"
 			brew install carthage
 			wait
-		fi
-
-		set +e
-		$(carthage help | grep bootstrap &> /dev/null)
-		EXIT_CODE=$?
-		set -e
-		if [ $EXIT_CODE == 0 ]; then
-			echo "Carthage is installed."
-		else
-			echo "Failed to carthage!"
+			set +e
+			$(carthage help | grep bootstrap &> /dev/null)
+			EXIT_CODE=$?
+			set -e
+			if [ $EXIT_CODE == 0 ]; then
+				echo "Carthage is installed."
+			else
+				echo "Failed to carthage!"
+			fi
 		fi
 	} >> "${BASEDIR}/dependency-logs/install_carthage.log" 2>&1 &
 }
