@@ -10,9 +10,9 @@ Requirements before running the script:
 Script description:
 1. Creates a folder for each dependency installation logs in the same folder the script is located.
 2. installNVM 
-   - Checks if **NVM** is installed and if not - installs it  
-   - Checks if **Node.js 8.16.0** is installed and if not - installs it with nvm(8.16.0 is needed for STF)  
-   - Checks if **Node.js 10.16.2** is installed and if not - installs it with nvm(10.16.2 is used for Appium)  
+   - Checks if **NVM** is installed and if not - installs it  (in progress)
+   - Checks if **Node.js 8.16.0** is installed and if not - installs it with nvm(8.16.0 is needed for STF)  (in progress)
+   - Checks if **Node.js 10.16.2** is installed and if not - installs it with nvm(10.16.2 is used for Appium)  (in progress)
    - Sets nvm alias default for **Node.js 8.16.0**
 3. installHomebrew - checks if **Homebrew** is installed and if not -installs it
 4. installJavaOpenJDK - checks if there is **Java** installed and if not installs **openjdk8** and sets environment variables
