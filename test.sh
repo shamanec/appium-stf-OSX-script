@@ -508,6 +508,7 @@ wait
 installMjpegConsumer
 wait
 installUdid
+#brew install ffmpeg to have videos from the runs in Zafira
 #wait
 #cd ${BASEDIR}/stf-master
 #wait
